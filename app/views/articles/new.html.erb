@@ -1,7 +1,7 @@
 <h1>Create an article/tworzenie artykułu</h1>
 <% if @article.errors.any? %>
 <ul>
-  <% @article.errors.messages.each do |message| %>
+  <% @article.errors.full_messages.each do |message| %>
     <li> <%= message %>
   <% end %>
 </ul>
