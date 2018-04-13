@@ -8,15 +8,18 @@ class ArticlesController < ApplicationController
     @article = Article.find(params[:id])
   end
 
-  def new
+  def destroy
+    @article = Article.find(params[:id])
+    @article.destroy
+    flash[:notice] = "Article was successfully deleted"
+  end
+def new
     @article = Article.new
   end
-
-  def edit
+def edit
     @article = Article.find(params[:id])
   end
-
-  def update
+def update
     @article = Article.find(params[:id])
     if @article.update(article_params)
       flash[:notice] = "Article was successfully updated"
