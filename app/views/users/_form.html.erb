@@ -1,0 +1,19 @@
+<%= render 'shared/errors', obj: @user %>
+
+<%= form_for @user do |f| %>
+  <div>
+    <%= f.text_field :username, class: "form-control", placeholder: "Enter username", autofocus: true %>
+    <%= f.label :email %>
+    <%= f.email_field :email, class: "form-control", placeholder: "Enter email"%>
+  </div>
+
+  <div>
+    <%= f.password_field :password, class: "form-control", placeholder: "Enter password" %>
+  </div>
+
+  <p>
+    <%= f.submit(@user.new_record? ? "Zaloguj się!" : "Zaktualizuj konto!", class: 'btn btn-primary btn-lg') %>
+  </p>
+<% end %>
+
+<%= link_to "Back to articles listing", articles_path %>
