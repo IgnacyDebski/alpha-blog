@@ -1,6 +1,6 @@
 <%= render 'shared/errors', obj: @user %>
 
-<%= form_for @user do |f| %>
+<%= form_for(@user, :html => {class: "form-horizontal", role: "form"}) do |f| %>
   <div>
     <%= f.text_field :username, class: "form-control", placeholder: "Enter username", autofocus: true %>
     <%= f.label :email %>
@@ -8,7 +8,8 @@
   </div>
 
   <div>
-    <%= f.password_field :password, class: "form-control", placeholder: "Enter password" %>
+    <%= f.label :password %>
+    <%= f.password_field :password, class: "form-control", autocomplete: "off" %>
   </div>
 
   <p>

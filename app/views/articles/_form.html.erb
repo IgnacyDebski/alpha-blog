@@ -1,5 +1,4 @@
 <%= render 'shared/errors', obj: @article %>
-
 <%= form_for @article do |f| %>
   <p>
       <%= f.label :title %> <br/>
@@ -12,6 +11,7 @@
   </p>
 
   <p>
+      <%= f.number_field :user_id %>
       <%= f.submit %>
   </p>
 <% end %>

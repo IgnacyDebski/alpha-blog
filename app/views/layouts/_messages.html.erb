@@ -1,5 +1,5 @@
-<div class="alert-success">
-  <% flash.each do |name, msg| %>
+<% flash.each do |name, msg| %>
+  <div class="alert alert-<%=name%>">
     <ul>
       <li><%= msg %></li>
     </ul>
